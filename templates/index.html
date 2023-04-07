@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Machine Translation</title>
+</head>
+<body>
+    <h1>Machine Translation</h1>
+    <form method="post" action="{{ url_for('predict') }}">
+        <label for="input_text">Input sentence:</label><br>
+        <textarea name="input_text" rows="4" cols="50"></textarea><br>
+        <button type="submit">Translate</button>
+    </form>
+    {% if output_text %}
+        <h2>Output sentence:</h2>
+        <p>{{ output_text }}</p>
+    {% endif %}
+</body>
+</html>
